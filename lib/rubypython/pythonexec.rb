@@ -19,7 +19,9 @@ class RubyPython::PythonExec
 
     @dirname = File.dirname(@python)
     @realname = @python.dup
-    if (@realname !~ /#{@version}$/ and @realname !~ /\.exe$/)
+    if (@realname.include? 'python2.7')
+      # Do nothing.
+    elsif (@realname !~ /#{@version}$/ and @realname !~ /\.exe$/)
       @realname = "#{@python}#{@version}"
     else
       basename = File.basename(@python, '.exe')
