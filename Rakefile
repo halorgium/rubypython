@@ -8,6 +8,7 @@ Hoe.plugin :gemspec
 Hoe.plugin :rubyforge
 Hoe.plugin :git
 Hoe.plugin :hg
+Hoe.plugins.delete(:test)
 
 Hoe.spec 'rubypython' do
   self.rubyforge_name = self.name
